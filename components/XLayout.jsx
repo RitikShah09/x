@@ -55,7 +55,7 @@ export default function XLayout(props) {
 
   return (
     <div className="w-screen h-screen flex flex-col-reverse sm:flex-row bg-gray-900">
-      <div className="w-screen absolute bottom-0 left-0 sm:relative sm:w-1/4 sm:h-full sm:flex lg:justify-end sm:justify-center border-t-[1px] border-gray-600 sm:border-none ">
+      <div className="w-screen z-20 bg-gray-900 sm:relative fixed sm:w-1/4 sm:h-full sm:flex lg:justify-end sm:justify-center border-t-[1px] border-gray-600 sm:border-none ">
         <div className="flex justify-evenly sm:flex-col sm:w-fit w-full">
           <div className=" px-4 hidden sm:flex">
             <div className="text-2xl h-fit w-fit hover:bg-gray-800 rounded-full p-4 cursor-pointer transition-all hidden sm:flex">
@@ -91,7 +91,7 @@ export default function XLayout(props) {
         </div>
       </div>
       <div className=" w-full sm:w-9/12 h-full">
-        <div className=" pt-[67px] sm:p-0 overflow-auto no-scrollbar sm:w-3/4 h-full w-full lg:w-[55%] border-l-[1px] border-r-[1px] border-gray-600">
+        <div className=" pb-[67px] sm:p-0 overflow-auto no-scrollbar sm:w-3/4 h-full w-full lg:w-[55%] border-l-[1px] border-r-[1px] border-gray-600">
           {props.children}
         </div>
       </div>

@@ -1,7 +1,6 @@
 import React from "react";
 import Image from "next/image";
 import { BiMessageRounded, BiUpload } from "react-icons/bi";
-import { FaRetweet } from "react-icons/fa";
 import { AiOutlineHeart } from "react-icons/ai";
 import Link from "next/link";
 import { CiBookmark } from "react-icons/ci";
