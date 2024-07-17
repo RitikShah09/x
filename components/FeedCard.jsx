@@ -8,7 +8,7 @@ import { CiShare1 } from "react-icons/ci";
 const FeedCard = (props) => {
 
   return (
-    <div className=" hover:bg-slate-900 transition-all cursor-pointer">
+    <div className=" hover:bg-slate-800 transition-all cursor-pointer border-b-[1px] border-gray-700 ">
       <div className=" w-full flex items-center flex-col p-5">
         <div className="flex items-center w-full justify-start gap-3">
           {/* {data.author?.profileImageURL && ( */}

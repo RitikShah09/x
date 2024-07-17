@@ -4,12 +4,12 @@ import React from "react";
 const page = () => {
   return (
     <XLayout>
-      <div className="py-10">
-        <div className=" flex items-center max-w-sm mx-auto mb-10">
+      <div className="py-10 flex justify-center flex-col items-center">
+        <div className=" flex items-center justify-center w-3/4 sm:w-2/3 mb-10">
           <label for="simple-search" class="sr-only">
             Search
           </label>
-          <div class="relative w-full">
+          <div class="w-full">
             <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none"></div>
             <input
               type="text"
@@ -38,7 +38,7 @@ const page = () => {
             <span class="sr-only">Search</span>
           </button>
         </div>
-        <div className="flex items-center justify-between gap-1 max-w-sm mx-auto mb-2 border-b-[1px] py-2 border-gray-800">
+        <div className="flex items-center w-3/4 sm:w-2/3 justify-between gap-1 mb-2 border-b-[1px] py-2 border-gray-800">
           <div className=" flex items-center gap-1">
             <img
               className=" h-10 w-10 rounded-full"

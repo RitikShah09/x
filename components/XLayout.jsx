@@ -91,7 +91,7 @@ export default function XLayout(props) {
         </div>
       </div>
       <div className=" w-full sm:w-9/12 h-full">
-        <div className=" pb-[67px] sm:p-0 overflow-auto no-scrollbar sm:w-3/4 h-full w-full lg:w-[55%] border-l-[1px] border-r-[1px] border-gray-600">
+        <div className=" sm:p-0 overflow-auto no-scrollbar sm:w-3/4 h-[calc(100%-59px)] sm:h-full w-full lg:w-[55%] border-l-[1px] border-r-[1px] border-gray-600">
           {props.children}
         </div>
       </div>
