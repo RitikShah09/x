@@ -8,12 +8,11 @@ const Page = () => {
   const [username, setUsername] = useState("");
   const [name, setName] = useState("");
   const [password, setPassword] = useState("");
-
+  const router = useRouter();
   const SignUp = async () => {
-    const router = useRouter();
-     const data = { email, username, name, password };
-     dispatch(asyncSignupUser(data));
-      router.push("/");
+    const data = { email, username, name, password };
+    dispatch(asyncSignupUser(data));
+    router.push("/");
   };
   return (
     <div className=" h-screen w-full flex items-center justify-center bg-gray-900">
