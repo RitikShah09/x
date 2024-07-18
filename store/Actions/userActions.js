@@ -8,7 +8,6 @@ import {
   isError,
 } from "../Reducers/userReducers";
 import { toast } from "react-toastify";
-import { redirect } from "next/navigation";
 export const asyncCurrentUser = () => async (dispatch, getstate) => {
   try {
     const { data } = await axios.get("/user");

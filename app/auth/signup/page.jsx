@@ -2,6 +2,7 @@
 import React from "react";
 import Link from "next/link";
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 
 const Page = () => {
   const [email, setEmail] = useState("");
@@ -9,7 +10,12 @@ const Page = () => {
   const [name, setName] = useState("");
   const [password, setPassword] = useState("");
 
-  const signUp = async () => {};
+  const signUp = async () => {
+    const router = useRouter();
+     const data = { email, username, name, password };
+     dispatch(asyncSignupUser(data));
+      router.push("/");
+  };
   return (
     <div className=" h-screen w-full flex items-center justify-center bg-gray-900">
       <div className="h-full w-1/2">
