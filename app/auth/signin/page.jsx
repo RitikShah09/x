@@ -10,7 +10,7 @@ const Page = () => {
   const router = useRouter();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const logIn = async () => {
+  const LogIn = async () => {
     const data = { email, password };
     dispatch(asyncSigninUser(data));
     router.push("/");
@@ -50,7 +50,7 @@ const Page = () => {
           </div>
           <button
             className=" my-3 w-64 font-medium border-none rounded-md py-2 px-0 bg-[#5851DB] text-white"
-            onClick={logIn}
+            onClick={LogIn}
           >
             Login
           </button>

@@ -10,7 +10,7 @@ const Page = () => {
   const [name, setName] = useState("");
   const [password, setPassword] = useState("");
 
-  const signUp = async () => {
+  const SignUp = async () => {
     const router = useRouter();
      const data = { email, username, name, password };
      dispatch(asyncSignupUser(data));
@@ -63,7 +63,7 @@ const Page = () => {
             className="mt-3 w-64 bg-[#5851DB] text-white py-2 rounded-md border-none font-medium"
             onClick={(e) => {
               e.preventDefault();
-              signUp();
+              SignUp();
             }}
           >
             SignUp
