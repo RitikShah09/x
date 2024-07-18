@@ -1,5 +1,4 @@
 "use client";
-import React from "react";
 import Link from "next/link";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
@@ -27,6 +26,10 @@ const Page = () => {
           <div className="my-2 flex flex-col">
             <label className=" text-white">Email</label>
             <input
+              value={email}
+              onChange={(e) => {
+                setEmail(e.target.value);
+              }}
               className="w-64 px-2 py-1 outline-none border rounded-sm mt-1 bg-gray-800 text-white"
               type="email"
               placeholder="Enter Your Email"
@@ -36,6 +39,10 @@ const Page = () => {
           <div className="my-2 flex flex-col">
             <label className=" text-white">Name</label>
             <input
+              value={name}
+              onChange={(e) => {
+                setName(e.target.value);
+              }}
               className="w-64 px-2 py-1 outline-none border rounded-sm mt-1 bg-gray-800 text-white"
               type="text"
               placeholder="Enter Your Name"
@@ -44,6 +51,10 @@ const Page = () => {
           <div className="my-2 flex flex-col">
             <label className=" text-white">UserName</label>
             <input
+              value={username}
+              onChange={(e) => {
+                setUsername(e.target.value);
+              }}
               className="w-64 px-2 py-1 outline-none border rounded-sm mt-1 bg-gray-800 text-white"
               type="text"
               placeholder="Enter Your UserName"
@@ -53,6 +64,10 @@ const Page = () => {
           <div className="mb-3 mt-3 flex flex-col">
             <label className=" text-white">Password</label>
             <input
+              value={password}
+              onChange={(e) => {
+                setPassword(e.target.value);
+              }}
               className="w-64 px-2 py-1 outline-none border rounded-sm mt-1 bg-gray-800 text-white"
               type="password"
               placeholder="Enter Your Password"
