@@ -9,7 +9,7 @@ import { GoBookmark } from "react-icons/go";
 import { RiMoreFill } from "react-icons/ri";
 import { useSelector } from "react-redux";
 export default function XLayout(props) {
-  const {user} = useSelector((state)=> state.user);
+  const { user } = useSelector((state) => state.user);
   const sidebarMenuItems = useMemo(() => [
     {
       title: "Home",
@@ -61,30 +61,29 @@ export default function XLayout(props) {
             </div>
           </div>
           <div className="mt-1 text-xl pr-4 w-full sm:w-fit ">
-            <ul className=" flex w-full px-3 sm:border-none sm:w-fit sm:flex-col justify-between">
+            <div className=" flex w-full px-3 sm:border-none sm:w-fit sm:flex-col justify-between">
               {sidebarMenuItems.map((item) => (
-                <li key={item.title}>
-                  <Link
-                    className="flex justify-start items-center gap-4 hover:bg-gray-800 rounded-full py-2 px-4 w-fit cursor-pointer mt-2"
-                    href={item.link}
-                  >
-                    <span className=" text-3xl">{item.icon}</span>
-                    <span className="hidden sm:flex">{item.title}</span>
-                  </Link>
-                </li>
+                <Link
+                  key={item.title}
+                  className="flex justify-start items-center gap-4 hover:bg-gray-800 rounded-full py-2 px-4 w-fit cursor-pointer mt-2"
+                  href={item.link}
+                >
+                  <span className=" text-3xl">{item.icon}</span>
+                  <span className="hidden sm:flex">{item.title}</span>
+                </Link>
               ))}
-            </ul>
+            </div>
           </div>
           <div className=" w-full justify-center hidden sm:flex">
             <div className="sm:flex w-[70%] hidden cursor-pointer items-center gap-3 hover:bg-gray-800 pl-[10px] py-[10px] rounded-full ">
-              <Image
+              {/* <Image
                 height={35}
                 alt="img"
                 width={35}
                 src={user?.avatar?.url}
                 className=" rounded-full object-cover h-10 w-10"
-              />
-              <h1>Ritik</h1>
+              /> */}
+              <h1>{user?.name}</h1>
             </div>
           </div>
         </div>

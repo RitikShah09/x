@@ -66,7 +66,12 @@ const UserProfilePage = () => {
       <XLayout>
         <div>
           <nav className="flex items-center gap-3 py-3 px-3">
-            <BsArrowLeftShort className="text-4xl cursor-pointer" onClick={()=>{router.back()}} />
+            <BsArrowLeftShort
+              className="text-4xl cursor-pointer"
+              onClick={() => {
+                router.back();
+              }}
+            />
             <div>
               <h1 className="text-2xl font-bold">{userById?.username}</h1>
               <h1 className="text-md font-bold text-slate-500">
@@ -75,13 +80,15 @@ const UserProfilePage = () => {
             </div>
           </nav>
           <div className="p-4 border-b border-slate-800">
-            <Image
-              src={userById?.avatar?.url}
-              alt="user-image"
-              className="rounded-full h-20 w-20 object-cover"
-              width={100}
-              height={100}
-            />
+            {userById?.avatar?.url && (
+              <Image
+                src={userById?.avatar?.url}
+                alt="user-image"
+                className="rounded-full h-20 w-20 object-cover"
+                width={100}
+                height={100}
+              />
+            )}
 
             <h1 className="text-2xl font-bold mt-5">Ritik Shah</h1>
             <div className="flex justify-between items-center">
@@ -91,7 +98,10 @@ const UserProfilePage = () => {
               </div>
 
               {user?._id == id ? (
-                <Link href={'/root/edit'} className="bg-white text-black px-5 py-1 rounded-full text-lg">
+                <Link
+                  href={"/root/edit"}
+                  className="bg-white text-black px-5 py-1 rounded-full text-lg"
+                >
                   Edit
                 </Link>
               ) : (
@@ -116,7 +126,7 @@ const UserProfilePage = () => {
             </div>
           </div>
           <div>
-            {postByUser?.map((post, i) => {
+            {/* {postByUser?.map((post, i) => {
               return (
                 <Link key={post._id} href={`/root/post/${post._id}`}>
                   <div className=" hover:bg-slate-800 transition-all cursor-pointer border-b-[1px] border-gray-700 ">
@@ -188,7 +198,8 @@ const UserProfilePage = () => {
                   </div>
                 </Link>
               );
-            })}
+            })} */}
+            <h1>Hello</h1>
           </div>
         </div>
       </XLayout>
