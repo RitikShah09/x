@@ -47,7 +47,7 @@ const UserProfilePage = () => {
 
   useEffect(() => {
     getData();
-  }, []);
+  }, [getData]);
 
   const followUser = async () => {
     const data = { id: id };

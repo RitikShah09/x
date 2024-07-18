@@ -8,8 +8,8 @@ const Page = () => {
         <i className=" p-5 border border-gray-400 rounded-full text-6xl text-white ri-lock-line"></i>
         <h6 className="text-xl font-medium text-white ">Trouble logging in?</h6>
         <p className=" sm:text-base text-sm text-white">
-          Enter your email and we'll send you <br />a link to get back into your
-          account.
+          Enter your email and we&#39;ll send you <br />a link to get back into
+          your account.
         </p>
         <input
           className="border text-gray-900 outline-none text-base rounded-lg w-64 py-2 px-3"
