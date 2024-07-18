@@ -2,12 +2,15 @@
 import Link from "next/link";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import { useDispatch } from "react-redux";
+import { asyncSignupUser } from "@/store/Actions/userActions";
 
 const Page = () => {
   const [email, setEmail] = useState("");
   const [username, setUsername] = useState("");
   const [name, setName] = useState("");
   const [password, setPassword] = useState("");
+  const dispatch = useDispatch();
   const router = useRouter();
   const SignUp = async () => {
     const data = { email, username, name, password };
