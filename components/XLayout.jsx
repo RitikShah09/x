@@ -1,6 +1,5 @@
 import React, { useMemo } from "react";
 import { BsTwitter } from "react-icons/bs";
-import { SlOptions } from "react-icons/sl";
 import Link from "next/link";
 import Image from "next/image";
 import { IoIosAddCircleOutline } from "react-icons/io";
@@ -8,50 +7,49 @@ import { GoHome } from "react-icons/go";
 import { IoSearchOutline } from "react-icons/io5";
 import { GoBookmark } from "react-icons/go";
 import { RiMoreFill } from "react-icons/ri";
+import { useSelector } from "react-redux";
 export default function XLayout(props) {
-  const sidebarMenuItems = useMemo(
-    () => [
-      {
-        title: "Home",
-        icon: <GoHome />,
-        link: "/",
-      },
-      {
-        title: "Search",
-        icon: <IoSearchOutline />,
-        link: "/search",
-      },
-      {
-        title: "Create",
-        icon: <IoIosAddCircleOutline />,
-        link: "/create",
-      },
-      {
-        title: "Bookmarks",
-        icon: <GoBookmark />,
-        link: "/bookmark",
-      },
-      {
-        title: "Profile",
-        icon: (
-          <div>
-            <img
-              className="h-[30px] w-[30px] rounded-full object-cover"
-              src={"https://avatars.githubusercontent.com/u/109175397?v=4"}
-              alt="yf"
-            />
-          </div>
-        ),
-        link: "/user",
-      },
-      {
-        title: "More",
-        icon: <RiMoreFill />,
-        link: "/",
-      },
-    ]
-    // [user?.id]
-  );
+  const {user} = useSelector((state)=> state.user);
+  const sidebarMenuItems = useMemo(() => [
+    {
+      title: "Home",
+      icon: <GoHome />,
+      link: "/",
+    },
+    {
+      title: "Search",
+      icon: <IoSearchOutline />,
+      link: "/root/search",
+    },
+    {
+      title: "Create",
+      icon: <IoIosAddCircleOutline />,
+      link: "/root/create",
+    },
+    {
+      title: "Bookmarks",
+      icon: <GoBookmark />,
+      link: "/root/bookmark",
+    },
+    {
+      title: "Profile",
+      icon: (
+        <div>
+          <img
+            className="h-[30px] w-[30px] rounded-full object-cover"
+            src={user?.avatar?.url}
+            alt="yf"
+          />
+        </div>
+      ),
+      link: `/root/user/${user?._id}`,
+    },
+    {
+      title: "More",
+      icon: <RiMoreFill />,
+      link: "/root/more",
+    },
+  ]);
 
   return (
     <div className="w-screen h-screen flex flex-col-reverse sm:flex-row bg-gray-900">
@@ -78,12 +76,12 @@ export default function XLayout(props) {
             </ul>
           </div>
           <div className=" w-full justify-center hidden sm:flex">
-            <div className="sm:flex w-[70%] hidden cursor-pointer items-center gap-3 bg-purple-300 pl-2 py-1 rounded-full ">
+            <div className="sm:flex w-[70%] hidden cursor-pointer items-center gap-3 hover:bg-gray-800 pl-[10px] py-[10px] rounded-full ">
               <Image
                 height={35}
                 width={35}
-                src={"https://avatars.githubusercontent.com/u/109175397?v=4"}
-                className=" rounded-full"
+                src={user?.avatar?.url}
+                className=" rounded-full object-cover h-10 w-10"
               />
               <h1>Ritik</h1>
             </div>

@@ -1,13 +1,29 @@
+"use client";
 import FeedCard from "@/components/FeedCard";
 import XLayout from "@/components/XLayout";
+import React from "react";
+import { useRouter } from "next/navigation";
+import { useDispatch, useSelector } from "react-redux";
+import { useEffect } from "react";
+import { asyncAddPost } from "@/store/Actions/postActions";
 
-export default function Home() {
+const page = () => {
+  const { user } = useSelector((state) => state.user);
+  const router = useRouter();
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    if (!user) router.push("/auth/signin");
+  }, [user]);
+
+  useEffect(() => {
+    dispatch(asyncAddPost());
+  }, []);
   return (
     <XLayout>
       <FeedCard />
-      <FeedCard />
-      <FeedCard />
-      <FeedCard />
     </XLayout>
   );
-}
+};
+
+export default page;
