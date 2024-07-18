@@ -62,7 +62,7 @@ const Page = () => {
         </div>
         {userData?.map((users, i) => {
           return (
-            <Link Link href={`/root/user/${users?._id}`} className="flex items-center w-3/4 sm:w-2/3 justify-between gap-1 mb-2 border-b-[1px] py-2 border-gray-800">
+            <Link key={users._id} Link href={`/root/user/${users?._id}`} className="flex items-center w-3/4 sm:w-2/3 justify-between gap-1 mb-2 border-b-[1px] py-2 border-gray-800">
               <div className=" flex items-center gap-1">
                 <img
                   className=" h-10 w-10 rounded-full"

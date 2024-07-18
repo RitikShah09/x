@@ -118,7 +118,7 @@ const UserProfilePage = () => {
           <div>
             {postByUser?.map((post, i) => {
               return (
-                <Link href={`/root/post/${post._id}`}>
+                <Link key={post._id} href={`/root/post/${post._id}`}>
                   <div className=" hover:bg-slate-800 transition-all cursor-pointer border-b-[1px] border-gray-700 ">
                     <div className=" w-full flex items-center flex-col p-5">
                       <div className="flex items-center w-full justify-start gap-3 mb-2">

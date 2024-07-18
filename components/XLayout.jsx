@@ -38,7 +38,7 @@ export default function XLayout(props) {
           <img
             className="h-[30px] w-[30px] rounded-full object-cover"
             src={user?.avatar?.url}
-            alt="yf"
+            alt="avatar"
           />
         </div>
       ),
@@ -79,6 +79,7 @@ export default function XLayout(props) {
             <div className="sm:flex w-[70%] hidden cursor-pointer items-center gap-3 hover:bg-gray-800 pl-[10px] py-[10px] rounded-full ">
               <Image
                 height={35}
+                alt="img"
                 width={35}
                 src={user?.avatar?.url}
                 className=" rounded-full object-cover h-10 w-10"

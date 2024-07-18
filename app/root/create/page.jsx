@@ -41,7 +41,7 @@ const Page = () => {
           <img
             className=" h-10 w-10 rounded-full object-cover"
             src="https://avatars.githubusercontent.com/u/109175397?v=4"
-            alt=""
+            alt="user-avatar"
           />
           <textarea
             name="text"

@@ -3,9 +3,7 @@ import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import axios from "@/utils/axios";
 import { BiMessageRounded } from "react-icons/bi";
-import { AiOutlineHeart } from "react-icons/ai";
 import Link from "next/link";
-import { CiBookmark } from "react-icons/ci";
 import { CiShare1 } from "react-icons/ci";
 import XLayout from "@/components/XLayout";
 import { useParams, useRouter } from "next/navigation";
@@ -149,7 +147,7 @@ const Page = () => {
             </div>
             {Post?.comment?.map((com, i) => {
               return (
-                <div className="w-full relative">
+                <div key={com._id} className="w-full relative">
                   <div className="flex gap-2 my-2 w-fit border-b-[1px] border-gray-800 py-2">
                     <h1 className=" font-bold">{com?.userid?.name}</h1>
                     <h1>{com?.text}</h1>
@@ -164,7 +162,7 @@ const Page = () => {
                   </div>
                   {com?.reply?.map((reply, i) => {
                     return (
-                      <div className="flex gap-2 pb-2 justify-end w-full">
+                      <div key={reply._id} className="flex gap-2 pb-2 justify-end w-full">
                         <div className="w-1/2 ">
                           <div className=" w-fit border-b-[1px] border-gray-800 flex gap-2">
                             <h1 className=" font-bold">
