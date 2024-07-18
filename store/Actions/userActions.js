@@ -54,7 +54,7 @@ export const asyncSigninUser = (user) => async (dispatch, getstate) => {
 
 export const asyncSignoutUser = (user) => async (dispatch, getstate) => {
    try {
-     const { data } = await axios.post("/logout", {
+     const { data } = await axios.post("/user/signout", {
        headers: {
          "Content-Type": "application/json",
          Authorization: `Bearer ${localStorage.getItem("token")}`,
