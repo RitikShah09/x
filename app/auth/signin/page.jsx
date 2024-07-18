@@ -65,7 +65,7 @@ const Page = () => {
           </div>
           <div className="mb-3 w-64 flex justify-center">
             <div className=" text-base text-white">
-              Don't have an account?
+              Don&#39;t have an account?
               <Link
                 className=" no-underline text-[#5851DB] font-medium"
                 href="/auth/signup"
