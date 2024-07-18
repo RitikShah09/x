@@ -16,11 +16,11 @@ export const asyncCurrentUser = () => async (dispatch, getstate) => {
          Authorization: `Bearer ${localStorage.getItem("token")}`,
        },
      });
-     if (!data) {
-       dispatch(removeUser());
-       localStorage.removeItem("token");
-       return;
-     }
+    //  if (!data) {
+    //    dispatch(removeUser());
+    //    localStorage.removeItem("token");
+    //    return;
+    //  }
      // console.log(data);
      dispatch(addUser(data));
    } catch (error) {
