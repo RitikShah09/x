@@ -6,7 +6,7 @@ import React, { useState } from "react";
 import { BiImageAlt } from "react-icons/bi";
 import { useDispatch, useSelector } from "react-redux";
 
-const page = () => {
+const Page = () => {
   const router = useRouter();
   const { user } = useSelector((state) => state.user);
   const [show, setShow] = useState(false);
@@ -74,4 +74,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;

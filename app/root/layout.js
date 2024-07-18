@@ -3,7 +3,7 @@ import { useEffect } from "react";
 import { useSelector } from "react-redux";
 import { useRouter } from "next/navigation";
 
-const layout = ({ children }) => {
+const Layout = ({ children }) => {
   const router = useRouter();
   const { user } = useSelector((state) => state.user);
   useEffect(() => {
@@ -13,4 +13,4 @@ const layout = ({ children }) => {
   return children;
 };
 
-export default layout;
+export default Layout;

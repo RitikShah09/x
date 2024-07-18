@@ -1,7 +1,7 @@
 import React from "react";
 import "remixicon/fonts/remixicon.css";
 import Link from "next/link";
-const page = () => {
+const Page = () => {
   return (
     <div className="w-full h-screen flex items-center justify-center bg-gray-900">
       <div className=" sm:py-14 sm:px-28 py-5 h-5/6 sm:border-[1px] border-gray-800 flex flex-col items-center justify-center rounded-xl gap-5">
@@ -42,4 +42,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;

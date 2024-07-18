@@ -5,7 +5,7 @@ import axios from "@/utils/axios";
 import { useSelector } from "react-redux";
 import Link from "next/link";
 
-const page = () => {
+const Page = () => {
   const { user } = useSelector((state) => state.user);
   const [userData, setData] = useState([]);
   const [search, setSearch] = useState("");
@@ -90,4 +90,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;

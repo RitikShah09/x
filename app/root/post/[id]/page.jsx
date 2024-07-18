@@ -11,7 +11,7 @@ import XLayout from "@/components/XLayout";
 import { useParams, useRouter } from "next/navigation";
 import { useDispatch, useSelector } from "react-redux";
 import { asyncCurrentUser } from "@/store/Actions/userActions";
-const page = () => {
+const Page = () => {
   const router = useRouter();
   const [isReply, setIsReply] = useState(false);
   const [cmtId, setCmtId] = useState("");
@@ -186,4 +186,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;

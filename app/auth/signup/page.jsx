@@ -3,7 +3,7 @@ import React from "react";
 import Link from "next/link";
 import { useState } from "react";
 
-const page = () => {
+const Page = () => {
   const [email, setEmail] = useState("");
   const [username, setUsername] = useState("");
   const [name, setName] = useState("");
@@ -77,4 +77,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;

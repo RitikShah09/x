@@ -7,7 +7,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { asyncAddPost } from "@/store/Actions/postActions";
 
-const page = () => {
+const Page = () => {
   const { user } = useSelector((state) => state.user);
   const router = useRouter();
   const dispatch = useDispatch();
@@ -26,4 +26,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;

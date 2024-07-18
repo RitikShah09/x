@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import axios from "@/utils/axios";
 import { asyncCurrentUser } from "@/store/Actions/userActions";
 import { useRouter } from "next/navigation";
-const page = () => {
+const Page = () => {
   const dispatch = useDispatch();
   const router = useRouter();
   const { user } = useSelector((state) => state.user);
@@ -107,4 +107,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;

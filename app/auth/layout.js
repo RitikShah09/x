@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useRouter } from "next/navigation";
 import { asyncCurrentUser } from "@/store/Actions/userActions";
 
-const layout = ({ children }) => {
+const Layout = ({ children }) => {
   const dispatch = useDispatch();
   const router = useRouter();
   useEffect(() => {
@@ -19,4 +19,4 @@ const layout = ({ children }) => {
   return children;
 };
 
-export default layout;
+export default Layout;
