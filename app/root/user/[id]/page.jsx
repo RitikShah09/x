@@ -126,35 +126,36 @@ const UserProfilePage = () => {
             </div>
           </div>
           <div>
-            {/* {postByUser?.map((post, i) => {
+            {postByUser?.map((post, i) => {
               return (
                 <Link key={post._id} href={`/root/post/${post._id}`}>
                   <div className=" hover:bg-slate-800 transition-all cursor-pointer border-b-[1px] border-gray-700 ">
                     <div className=" w-full flex items-center flex-col p-5">
                       <div className="flex items-center w-full justify-start gap-3 mb-2">
-                        <Image
-                          className="rounded-full h-10 w-10 object-cover"
-                          src={userById?.avatar?.url}
-                          alt="user-image"
-                          height={50}
-                          width={50}
-                        />
-                        <div>
-                          <Link href={`/root/user/${post?.userid}`}>
-                            {userById?.username}
-                          </Link>
-                        </div>
+                        {post?.userid?.avatar?.url && (
+                          <Image
+                            className="rounded-full h-10 w-10 object-cover"
+                            src={userById?.avatar?.url}
+                            alt="user-image"
+                            height={50}
+                            width={50}
+                          />
+                        )}
+                        <Link href={`/root/user/${post?.userid?._id}`}>
+                          <h1>{userById?.username}</h1>
+                        </Link>
                       </div>
                       <div className="flex justify-center flex-col">
-                        <p>{post?.text}</p>
+                        <h1>{post?.text}</h1>
 
-                        <Image
-                          src={post?.postImage?.url}
-                          alt="image"
-                          width={450}
-                          height={400}
-                        />
-
+                        {post?.postImage?.url && (
+                          <Image
+                            src={post?.postImage?.url}
+                            alt="image"
+                            width={450}
+                            height={400}
+                          />
+                        )}
                         <div className="flex justify-between mt-5 text-xl items-center p-2 w-full">
                           {post.likes.includes(user?._id) ? (
                             <i
@@ -198,8 +199,7 @@ const UserProfilePage = () => {
                   </div>
                 </Link>
               );
-            })} */}
-            <h1>Hello</h1>
+            })}
           </div>
         </div>
       </XLayout>
