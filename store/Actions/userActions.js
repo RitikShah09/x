@@ -10,7 +10,7 @@ import {
 import { toast } from "react-toastify";
 export const asyncCurrentUser = () => async (dispatch, getstate) => {
   try {
-    const { data } = await axios.post("/user", {
+    const { data } = await axios.get("/user", {
       headers: {
         "Content-Type": "application/json",
         Authorization: `Bearer ${localStorage.getItem("token")}`,
