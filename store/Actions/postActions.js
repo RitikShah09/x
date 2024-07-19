@@ -22,8 +22,10 @@ export const asyncAddPost = () => async (dispatch, getstate) => {
 
 export const asyncCreatePost = (postData) => async (dispatch, getstate) => {
   try {
-    const { data } = await axios.post("/post", postData);
-    // console.log(data)
+    const { data } = await axios.post("/post",
+      postData
+);
+    console.log(data)
     dispatch(asyncAddPost());
   } catch (error) {
     console.log(error);
