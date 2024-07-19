@@ -44,11 +44,6 @@ export default function XLayout(props) {
       ),
       link: `/root/user/${user?._id}`,
     },
-    {
-      title: "More",
-      icon: <RiMoreFill />,
-      link: "/root/more",
-    },
   ]);
 
   return (
@@ -75,7 +70,7 @@ export default function XLayout(props) {
             </div>
           </div>
           <div className=" w-full justify-center hidden sm:flex">
-            <div className="sm:flex w-[70%] hidden cursor-pointer items-center gap-3 hover:bg-gray-800 pl-[10px] py-[10px] rounded-full ">
+            <div className="sm:flex w-[70%] hidden cursor-pointer items-center gap-3 hover:bg-gray-800 pl-[10px] py-[8px] rounded-full ">
               {user?.avatar?.url && (
                 <Image
                   height={35}
@@ -86,6 +81,7 @@ export default function XLayout(props) {
                 />
               )}
               <h1>{user?.name}</h1>
+              {/* <RiMoreFill />/ */}
             </div>
           </div>
         </div>

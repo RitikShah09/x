@@ -14,7 +14,7 @@ const Page = () => {
   const [isReply, setIsReply] = useState(false);
   const [cmtId, setCmtId] = useState("");
   const dispatch = useDispatch();
-  const [comment, setComment] = useState();
+  const [comment, setComment] = useState("");
   const { user } = useSelector((state) => state.user);
   const params = useParams();
   const id = params.id;
@@ -65,13 +65,15 @@ const Page = () => {
       <div className="border border-r-0 border-l-0 border-b-0 border-gray-600 p-5 hover:bg-slate-900 transition-all cursor-pointer">
         <div className=" w-full flex items-center flex-col">
           <div className="flex items-center w-full justify-start gap-3">
-            <Image
-              className="rounded-full h-12 w-12 object-cover"
-              src={Post?.userid?.avatar?.url}
-              alt="user-image"
-              height={50}
-              width={50}
-            />
+            {Post?.userid?.avatar?.url && (
+              <Image
+                className="rounded-full h-12 w-12 object-cover"
+                src={Post?.userid?.avatar?.url}
+                alt="user-image"
+                height={50}
+                width={50}
+              />
+            )}
             <h5>
               <Link href={`/root/user/${Post?.userid?._id}`}>
                 {Post?.userid?.username}
@@ -81,12 +83,14 @@ const Page = () => {
           <div className="flex justify-center flex-col">
             <p>{Post?.text}</p>
 
-            <Image
-              src={Post.postImage?.url}
-              alt="image"
-              width={450}
-              height={400}
-            />
+            {Post.postImage?.url && (
+              <Image
+                src={Post.postImage?.url}
+                alt="image"
+                width={450}
+                height={400}
+              />
+            )}
 
             <div className="flex justify-between mt-5 text-xl items-center p-2 w-full border-b-[1px] border-gray-800">
               <div>
@@ -162,7 +166,10 @@ const Page = () => {
                   </div>
                   {com?.reply?.map((reply, i) => {
                     return (
-                      <div key={reply._id} className="flex gap-2 pb-2 justify-end w-full">
+                      <div
+                        key={reply._id}
+                        className="flex gap-2 pb-2 justify-end w-full"
+                      >
                         <div className="w-1/2 ">
                           <div className=" w-fit border-b-[1px] border-gray-800 flex gap-2">
                             <h1 className=" font-bold">

@@ -12,7 +12,6 @@ import {
 const FeedCard = () => {
   const dispatch = useDispatch();
   const Post = useSelector((state) => state.post.allPost);
-  // console.log(Post?.allPosts);
   const { user } = useSelector((state) => state.user);
   const likePost = (id) => {
     dispatch(asyncLikePost(id));
@@ -29,28 +28,26 @@ const FeedCard = () => {
     <div>
       {Post?.allPosts?.map((post, i) => {
         return (
-          <Link key={post._id} href={`/root/post/${post._id}`}>
-            <div className=" hover:bg-slate-800 transition-all cursor-pointer border-b-[1px] border-gray-700 ">
-              <div className=" w-full flex items-center flex-col p-5">
-                <div className="flex items-center w-full justify-start gap-3 mb-2">
-                  {
-                    post?.userid?.avatar?.url && (
-                    <Image
-                      className="rounded-full h-10 w-10 object-cover"
-                      src={post?.userid?.avatar?.url}
-                      alt="user-image"
-                      height={50}
-                      width={50}
-                    />
-                    )
-                  }
-                  <Link href={`/root/user/${post?.userid?._id}`}>
-                    <h1>{post?.userid?.username}</h1>
-                  </Link>
-                </div>
-                <div className="flex justify-center flex-col">
-                  <h1>{post?.text}</h1>
+          <div key={post._id} className=" hover:bg-slate-800 transition-all cursor-pointer border-b-[1px] border-gray-700 ">
+            <div className=" w-full flex items-center flex-col p-5">
+              <div className="flex items-center w-full justify-start gap-3 mb-2">
+                {post?.userid?.avatar?.url && (
+                  <Image
+                    className="rounded-full h-10 w-10 object-cover"
+                    src={post?.userid?.avatar?.url}
+                    alt="user-image"
+                    height={50}
+                    width={50}
+                  />
+                )}
 
+                <Link href={`/root/user/${post?.userid?._id}`}>
+                  <h1>{post?.userid?.username}</h1>
+                </Link>
+              </div>
+              <div className="flex justify-center flex-col">
+                <h1>{post?.text}</h1>
+                <Link key={post._id} href={`/root/post/${post._id}`}>
                   {post?.postImage?.url && (
                     <Image
                       src={post?.postImage?.url}
@@ -59,48 +56,53 @@ const FeedCard = () => {
                       height={400}
                     />
                   )}
-                  <div className="flex justify-between mt-5 text-xl items-center p-2 w-full">
-                    {post.likes.includes(user?._id) ? (
-                      <i
-                        className="ri-heart-3-fill text-[#FF3040] cursor-pointer "
-                        onClick={() => {
-                          unlikePost(post._id);
-                        }}
-                      ></i>
-                    ) : (
-                      <i
-                        className="ri-heart-3-line cursor-pointer "
-                        onClick={() => {
-                          likePost(post._id);
-                        }}
-                      ></i>
-                    )}
-                    <Link href={`/root/post/${post._id}`}>
-                      <i className="ri-chat-3-line cursor-pointer "></i>
-                    </Link>
-                    <div>
-                      <CiShare1 />
-                    </div>
-                    {user?.savedPost.includes(post._id) ? (
-                      <i
-                        className="ri-bookmark-fill cursor-pointer"
-                        onClick={() => {
-                          savePost(post._id);
-                        }}
-                      ></i>
-                    ) : (
-                      <i
-                        className="ri-bookmark-line cursor-pointer"
-                        onClick={() => {
-                          savePost(post._id);
-                        }}
-                      ></i>
-                    )}
+                </Link>
+                <div
+                  className="flex justify-between mt-5 text-xl items-center p-2 w-full"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                  }}
+                >
+                  {post.likes.includes(user?._id) ? (
+                    <i
+                      className="ri-heart-3-fill text-[#FF3040] cursor-pointer "
+                      onClick={() => {
+                        unlikePost(post._id);
+                      }}
+                    ></i>
+                  ) : (
+                    <i
+                      className="ri-heart-3-line cursor-pointer "
+                      onClick={() => {
+                        likePost(post._id);
+                      }}
+                    ></i>
+                  )}
+                  <Link href={`/root/post/${post._id}`}>
+                    <i className="ri-chat-3-line cursor-pointer "></i>
+                  </Link>
+                  <div>
+                    <CiShare1 />
                   </div>
+                  {user?.savedPost.includes(post._id) ? (
+                    <i
+                      className="ri-bookmark-fill cursor-pointer"
+                      onClick={() => {
+                        savePost(post._id);
+                      }}
+                    ></i>
+                  ) : (
+                    <i
+                      className="ri-bookmark-line cursor-pointer"
+                      onClick={() => {
+                        savePost(post._id);
+                      }}
+                    ></i>
+                  )}
                 </div>
               </div>
             </div>
-          </Link>
+          </div>
         );
       })}
     </div>

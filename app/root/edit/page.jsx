@@ -10,9 +10,9 @@ const Page = () => {
   const router = useRouter();
   const { user } = useSelector((state) => state.user);
   const [username, setUserName] = useState(user?.username);
-  const [name, setName] = useState(user?.name);
+  const [name, setName] = useState(user?.name );
   const [email, setEmail] = useState(user?.email);
-  const [bio, setBio] = useState(user?.bio);
+  const [bio, setBio] = useState(user?.bio || '');
   const updateUser = async () => {
     const dets = { username, name, email, bio };
     const { data } = await axios.post("/user/update", dets);
@@ -22,7 +22,7 @@ const Page = () => {
   return (
     <XLayout>
       <div className=" w-full h-full flex gap-14 flex-col items-center justify-center">
-        <div className="sm:w-3/5 flex items-center justify-between  w-4/5">
+        <div className="sm:w-3/5 flex items-center justify-between gap-2  w-4/5">
           <img
             className=" h-14 w-14 rounded-full object-cover"
             src={user?.avatar?.url}
