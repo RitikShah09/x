@@ -12,7 +12,7 @@ const Page = () => {
   const [username, setUserName] = useState(user?.username);
   const [name, setName] = useState(user?.name );
   const [email, setEmail] = useState(user?.email);
-  const [bio, setBio] = useState(user?.bio || '');
+  const [bio, setBio] = useState(user?.bio);
   const updateUser = async () => {
     const dets = { username, name, email, bio };
     const { data } = await axios.post("/user/update", dets);
