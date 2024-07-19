@@ -3,11 +3,14 @@ import { addAllPost, isError } from "../Reducers/postReducers";
 import { toast } from "react-toastify";
 import { asyncCurrentUser } from "./userActions";
 
-
-
 export const asyncAddPost = () => async (dispatch, getstate) => {
   try {
-    const { data } = await axios.get("/post/all-post");
+    const { data } = await axios.get("/post/all-post", {
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${localStorage.getItem("token")}`,
+      },
+    });
     // console.log(data)
     dispatch(addAllPost(data));
   } catch (error) {
