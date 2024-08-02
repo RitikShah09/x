@@ -93,7 +93,7 @@ const UserProfilePage = () => {
               />
             )}
 
-            <h1 className="text-2xl font-bold mt-5">Ritik Shah</h1>
+            <h1 className="text-2xl font-bold mt-5">{userById?.name}</h1>
             <div className="flex justify-between items-center">
               <div className="flex gap-4 mt-2 text-sm text-gray-400">
                 <span>{userById?.followers?.length} followers</span>
