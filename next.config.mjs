@@ -5,6 +5,7 @@ const nextConfig = {
       "avatars.githubusercontent.com",
       "ik.imagekit.io",
       'images.unsplash.com',
+      "static.vecteezy.com"
     ],
   },
 };
